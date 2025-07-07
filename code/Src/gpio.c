@@ -1,4 +1,3 @@
-// my_gpio.c (optional if project grows)
 #include "gpio.h"
 
 void delay(volatile unsigned int t) {
@@ -8,10 +7,13 @@ void delay(volatile unsigned int t) {
 }
 
 void blink() {
-    GPIOA_ODR = 0x00004002;
-    GPIOB_ODR = 0x00000001;
+    // Set PA1, PA14, and PB0 HIGH using bitwise OR
+    GPIOA_ODR |= (1 << 1) | (1 << 14);
+    GPIOB_ODR |= (1 << 0);
     delay(800000);
-    GPIOA_ODR = 0x00000000;
-    GPIOB_ODR = 0x00000000;
+
+    // Set PA1, PA14, and PB0 LOW using bitwise AND with NOT mask
+    GPIOA_ODR = ~GPIOA_ODR;
+    GPIOB_ODR = ~GPIOB_ODR;
     delay(800000);
 }

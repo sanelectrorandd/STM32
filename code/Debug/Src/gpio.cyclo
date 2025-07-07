@@ -1,2 +1,2 @@
-../Src/gpio.c:4:6:delay	2
-../Src/gpio.c:10:6:blink	1
+../Src/gpio.c:3:6:delay	2
+../Src/gpio.c:9:6:blink	1
