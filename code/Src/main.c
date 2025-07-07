@@ -3,10 +3,10 @@
 int main(void) {
     RCC_APB2ENR |= 0x0C; // Enable GPIOA, GPIOB
 
-    GPIOA_CRL = 0x00000020;
-    GPIOB_CRL = 0x00000002;
-    GPIOA_CRH = 0x02000000;
-    GPIOC_CRH = 0x00800000;
+    GPIOA_CRL = 1<<5;
+    GPIOB_CRL = 1<<1;
+    GPIOA_CRH = 1<<24;
+    GPIOC_CRH = 1<<23;
 
     while (1) {
         if ((GPIOC_IDR & 0x00002000) == 0) {

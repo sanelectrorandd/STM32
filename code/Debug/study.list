@@ -165,19 +165,19 @@ int main(void) {
  80001ee:	f043 030c 	orr.w	r3, r3, #12
  80001f2:	6013      	str	r3, [r2, #0]
 
-    GPIOA_CRL = 0x00000020;
+    GPIOA_CRL = 1<<5;
  80001f4:	4b12      	ldr	r3, [pc, #72]	@ (8000240 <main+0x5c>)
  80001f6:	2220      	movs	r2, #32
  80001f8:	601a      	str	r2, [r3, #0]
-    GPIOB_CRL = 0x00000002;
+    GPIOB_CRL = 1<<1;
  80001fa:	4b12      	ldr	r3, [pc, #72]	@ (8000244 <main+0x60>)
  80001fc:	2202      	movs	r2, #2
  80001fe:	601a      	str	r2, [r3, #0]
-    GPIOA_CRH = 0x02000000;
+    GPIOA_CRH = 1<<24;
  8000200:	4b11      	ldr	r3, [pc, #68]	@ (8000248 <main+0x64>)
- 8000202:	f04f 7200 	mov.w	r2, #33554432	@ 0x2000000
+ 8000202:	f04f 7280 	mov.w	r2, #16777216	@ 0x1000000
  8000206:	601a      	str	r2, [r3, #0]
-    GPIOC_CRH = 0x00800000;
+    GPIOC_CRH = 1<<23;
  8000208:	4b10      	ldr	r3, [pc, #64]	@ (800024c <main+0x68>)
  800020a:	f44f 0200 	mov.w	r2, #8388608	@ 0x800000
  800020e:	601a      	str	r2, [r3, #0]
